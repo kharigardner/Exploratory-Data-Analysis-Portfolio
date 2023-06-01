@@ -5,3 +5,5 @@ matplotlib
 jinja2
 plotly
 ipywidgets
+geopandas
+scikit-learn
