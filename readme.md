@@ -1,4 +1,4 @@
-# Maven Analytics - Exploratory Data Analysis with Jupyter Notebooks & PowerBI
+#  Exploratory Data Analysis with Jupyter Notebooks & PowerBI
 --------------------------------------------
 
 ## Project Overview
