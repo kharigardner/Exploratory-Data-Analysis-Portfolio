@@ -1,0 +1,16 @@
+# BEGIN: 8d7f6a5b8c4e
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Password123 
+
+WORKDIR /usr/src/app
+
+# Copy the sql script to create the DB into the working directory
+COPY instnwnd.sql /usr/src/app
+
+# Create the database and run the script in the database
+RUN /opt/mssql/bin/sqlservr & sleep 15 \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P ${SA_PASSWORD} -i /usr/src/app/instnwnd.sql \
+    && pkill sqlservr
+# END: 8d7f6a5b8c4e
